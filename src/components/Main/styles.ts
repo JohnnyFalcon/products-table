@@ -1,4 +1,4 @@
-import { Container, Button, Paper, Box } from "@mui/material";
+import { Container, Button, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import TableRow from "@mui/material/TableRow";
 
@@ -37,10 +37,12 @@ const PaperStyled = styled(Paper)({
   margin: "30px 0"
 });
 
-const TableRowStyled = styled(TableRow)({
+const TableRowStyled = styled(TableRow)<{ color: string }>((props) => ({
+  backgroundColor: props.color,
   "&:hover": {
-    opacity: 0.8,
-    cursor: "pointer"
+    cursor: "pointer",
+    backgroundColor: `${props.color}5e`
   }
-});
+}));
+
 export { ContainerStyled, ButtonStyled, List, PaperStyled, TableRowStyled };

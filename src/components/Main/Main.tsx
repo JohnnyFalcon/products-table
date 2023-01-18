@@ -36,7 +36,7 @@ const Main = () => {
     error
   } = useContext(ProductsContext) as ProductsContextType;
   const [open, setOpen] = useState<boolean>(false);
-  const [modalData, setModalData] = useState<number>(0);
+  const [modalIndex, setModalIndex] = useState<number>(0);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const style = {
@@ -96,14 +96,14 @@ const Main = () => {
                   {currentProducts.map((row, index) => (
                     <>
                       <TableRowStyled
+                        key={row.id}
+                        color={row.color}
                         onClick={() => {
-                          setModalData(index);
+                          setModalIndex(index);
                           handleOpen();
                         }}
-                        key={row.id}
                         sx={{
-                          "&:last-child td, &:last-child th": { border: 0 },
-                          backgroundColor: `${row.color}`
+                          "&:last-child td, &:last-child th": { border: 0 }
                         }}
                       >
                         <TableCell component="th" scope="row">
@@ -114,17 +114,11 @@ const Main = () => {
                       </TableRowStyled>
 
                       <Modal
-                        open={index === modalData && open}
+                        open={index === modalIndex && open}
                         onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
                       >
                         <Box sx={style}>
-                          <Typography
-                            id="modal-modal-title"
-                            variant="h6"
-                            component="h2"
-                          >
+                          <Typography variant="h6" component="h2">
                             Prodact informations:
                           </Typography>
                           <Box
@@ -135,22 +129,11 @@ const Main = () => {
                               justifyContent: "center"
                             }}
                           >
-                            <Typography
-                              id="modal-modal-description"
-                              sx={{ m: 2 }}
-                            >
-                              ID: {row.id}
-                            </Typography>
-                            <Typography
-                              id="modal-modal-description"
-                              sx={{ m: 2 }}
-                            >
+                            <Typography sx={{ m: 2 }}>ID: {row.id}</Typography>
+                            <Typography sx={{ m: 2 }}>
                               NAME: {row.name}
                             </Typography>
-                            <Typography
-                              id="modal-modal-description"
-                              sx={{ m: 2 }}
-                            >
+                            <Typography sx={{ m: 2 }}>
                               YEAR: {row.year}
                             </Typography>
                           </Box>
@@ -177,7 +160,7 @@ const Main = () => {
         >
           <ButtonStyled
             variant="outlined"
-            disabled={searchTerm.length > 0 && true}
+            disabled={(searchTerm.length > 0 || currentPage === 1) && true}
             onClick={() => {
               if (currentPage > 1) {
                 setCurrentPage(currentPage - 1);
@@ -189,7 +172,7 @@ const Main = () => {
           </ButtonStyled>
           <ButtonStyled
             variant="outlined"
-            disabled={searchTerm.length > 0 && true}
+            disabled={(searchTerm.length > 0 || currentPage === 3) && true}
             onClick={() => {
               if (currentPage < 3) {
                 setCurrentPage(currentPage + 1);
