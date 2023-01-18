@@ -1,7 +1,7 @@
 # Codibly recruitment project
 
 
-This project was created for Codibly for the sake of job recruitment.
+This project was created for recruitment to Codibly.
 
 ![image](https://user-images.githubusercontent.com/82409487/213100388-255a60ee-deda-4501-84ea-1ad0a80a813a.png)
 
