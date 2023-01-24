@@ -45,4 +45,33 @@ const TableRowStyled = styled(TableRow)<{ color: string }>((props) => ({
   }
 }));
 
-export { ContainerStyled, ButtonStyled, List, PaperStyled, TableRowStyled };
+const HrLine = styled("hr")({
+  border: 0,
+  height: "1px",
+  backgroundImage:
+    "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) );",
+  width: "100%"
+});
+const BoxInfo = styled(TableRow)<{ color: string }>((props) => ({
+  backgroundColor: props.color,
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "50px",
+  borderTopLeftRadius: "10px",
+  borderTopRightRadius: "10px",
+  display: "flex",
+  alignItems: "center",
+  paddingLeft: 10
+}));
+
+export {
+  ContainerStyled,
+  ButtonStyled,
+  List,
+  PaperStyled,
+  TableRowStyled,
+  HrLine,
+  BoxInfo
+};
