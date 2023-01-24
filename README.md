@@ -3,7 +3,7 @@
 
 This project was created for recruitment to Codibly.
 
-![image](https://user-images.githubusercontent.com/82409487/213100388-255a60ee-deda-4501-84ea-1ad0a80a813a.png)
+![image](https://user-images.githubusercontent.com/82409487/214225902-0ec809ce-2544-4bf7-8c5c-70dcfbf8cba1.png)
 
 
 
