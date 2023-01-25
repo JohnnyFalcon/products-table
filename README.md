@@ -7,10 +7,10 @@ Link to deployed version: https://phenomenal-custard-6fe128.netlify.app
 ![image](https://user-images.githubusercontent.com/82409487/214225902-0ec809ce-2544-4bf7-8c5c-70dcfbf8cba1.png)
 
 # Build With:
-*React/Typescript
-*useContext
-*Fetching data with axios
-*Styled with Material UI
+* React/Typescript
+* useContext
+* Fetching data with axios
+* Styled with Material UI
 
 # Task description:
 
