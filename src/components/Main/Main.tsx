@@ -51,9 +51,6 @@ const Main = () => {
                               setModalIndex(filteredProduct.id);
                               handleOpen();
                             }}
-                            sx={{
-                              "&:last-child td, &:last-child th": { border: 0 }
-                            }}
                           >
                             <TableCell component="th" scope="row">
                               {filteredProduct.id}
@@ -81,9 +78,6 @@ const Main = () => {
                             onClick={() => {
                               setModalIndex(index);
                               handleOpen();
-                            }}
-                            sx={{
-                              "&:last-child td, &:last-child th": { border: 0 }
                             }}
                           >
                             <TableCell component="th" scope="row">

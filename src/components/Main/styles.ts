@@ -1,4 +1,10 @@
-import { Container, Button, Paper, CircularProgress } from "@mui/material";
+import {
+  Container,
+  Button,
+  Paper,
+  CircularProgress,
+  TextField
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import TableRow from "@mui/material/TableRow";
 
@@ -28,9 +34,10 @@ const List = styled("ul")({
 });
 
 const PaperStyled = styled(Paper)({
-  position: "relative",
   width: "400px",
-  height: "320px",
+  flexShrink: 0,
+  height: "321px",
+  overflowY: "auto",
   justifyContent: "space-around",
   alignItems: "center",
   flexDirection: "column",
@@ -39,6 +46,9 @@ const PaperStyled = styled(Paper)({
 
 const TableRowStyled = styled(TableRow)<{ color: string }>((props) => ({
   backgroundColor: props.color,
+  "&:last-child td, &:last-child th": {
+    border: 0
+  },
   "&:hover": {
     cursor: "pointer",
     backgroundColor: `${props.color}5e`
@@ -73,6 +83,21 @@ const CircularProgressStyled = styled(CircularProgress)({
   translate: "-50% -50%",
   fontSize: "3rem"
 });
+
+const TextFieldStyled = styled(TextField)<{ colorField: string | undefined }>(
+  (props) => ({
+    "& label.Mui-focused": {
+      color: props.colorField
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: props.colorField
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: props.colorField
+    }
+  })
+);
+
 export {
   ContainerStyled,
   ButtonStyled,
@@ -81,5 +106,6 @@ export {
   TableRowStyled,
   HrLine,
   BoxInfo,
-  CircularProgressStyled
+  CircularProgressStyled,
+  TextFieldStyled
 };

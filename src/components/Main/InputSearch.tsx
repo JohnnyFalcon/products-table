@@ -1,16 +1,23 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { Box, InputAdornment, TextField } from "@mui/material";
+import { Box, InputAdornment } from "@mui/material";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import { ProductsContextType } from "../../contexts/Products.types";
+import { TextFieldStyled } from "./styles";
+
 const InputSearch = () => {
-  const { setCurrentPage, setSearchTerm, searchTerm, totalProducts } =
-    useContext(ProductsContext) as ProductsContextType;
+  const {
+    setCurrentPage,
+    setSearchTerm,
+    searchTerm,
+    totalProducts,
+    filteredProduct
+  } = useContext(ProductsContext) as ProductsContextType;
 
   return (
     <Box>
-      <TextField
-        data-testid="filterInput"
+      <TextFieldStyled
+        colorField={filteredProduct && filteredProduct.color}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
