@@ -1,4 +1,4 @@
-import { Container, Button, Paper } from "@mui/material";
+import { Container, Button, Paper, CircularProgress } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import TableRow from "@mui/material/TableRow";
 
@@ -66,6 +66,13 @@ const BoxInfo = styled(TableRow)<{ color: string }>((props) => ({
   paddingLeft: 10
 }));
 
+const CircularProgressStyled = styled(CircularProgress)({
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  translate: "-50% -50%",
+  fontSize: "3rem"
+});
 export {
   ContainerStyled,
   ButtonStyled,
@@ -73,5 +80,6 @@ export {
   PaperStyled,
   TableRowStyled,
   HrLine,
-  BoxInfo
+  BoxInfo,
+  CircularProgressStyled
 };

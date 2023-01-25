@@ -8,7 +8,12 @@ import {
   TableCell,
   TableBody
 } from "@mui/material";
-import { ContainerStyled, PaperStyled, TableRowStyled } from "./styles";
+import {
+  ContainerStyled,
+  PaperStyled,
+  TableRowStyled,
+  CircularProgressStyled
+} from "./styles";
 import InputSearch from "./InputSearch";
 import PaginationComponent from "./Pagination";
 import ModalComponent from "./ModalComponent";
@@ -98,7 +103,7 @@ const Main = () => {
                 </TableBody>
               </Table>
             ) : (
-              <p>Loading...</p>
+              <CircularProgressStyled color="secondary" size={60} />
             )
           ) : (
             error
