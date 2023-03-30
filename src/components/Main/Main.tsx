@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProductsContextType } from "../../contexts/Products.types";
 import { ProductsContext } from "../../contexts/ProductsContext";
 import {
@@ -17,6 +17,7 @@ import {
 import InputSearch from "./InputSearch";
 import PaginationComponent from "./Pagination";
 import ModalComponent from "./ModalComponent";
+import { app, analytics } from "../../index";
 const Main = () => {
   const { currentProducts, loading, error, filter, filteredProduct } =
     useContext(ProductsContext) as ProductsContextType;

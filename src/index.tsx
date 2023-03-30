@@ -1,12 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { FirebaseType } from "./firebaseConfig";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { firebaseConfig } from "./firebaseConfig";
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
+export const app = initializeApp(firebaseConfig);
+export const analytics = getAnalytics(app);
+
+// Initialize Firebase
+
 root.render(
   <React.StrictMode>
     <App />
